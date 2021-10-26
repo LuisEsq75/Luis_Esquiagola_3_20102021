@@ -1,0 +1,12 @@
+{
+  "name": "luis_esquiagola_3_20102021",
+  "version": "1.0.0",
+  "description": "Luis_Esquiagola_3_20102021",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "saas": "sass --watch ./sass/scss/style.scss:./sass/css/style.css"
+  },
+  "author": "",
+  "license": "ISC"
+}
