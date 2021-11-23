@@ -1,0 +1,83 @@
+.text {
+	font-family: "Shrikhand", sans-serif;
+}
+.loader
+{
+	position: fixed;
+    height: 100vh;
+	inset: 0;
+	z-index: 1;
+	opacity: 1;
+	animation: disparition 800ms 3s;
+	animation-fill-mode: forwards;
+	background: #99E2D0;
+}
+@keyframes disparition {
+to  {
+		transform: scale(0);
+	}
+}
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.text {
+	position: absolute;
+	font-size: 3rem;
+	color: #FF79DA;
+	user-select: none;
+    
+}
+.text:before {
+	content: attr(title);
+	position: absolute;
+	inset: 0;
+	width: 0;
+	height: 100%;
+	color: #9356DC;
+	border-right: 5px solid #99E2D0;
+	overflow: hidden;
+	animation: animate  3s linear 1;
+}
+@keyframes animate {
+	0%,
+	10%,
+	100% {
+		width: 0;
+	}
+	70%,
+	90% {
+		width: 100%;
+	}
+}
+
+
+
+/* effet apparition menu */
+
+
+
+@keyframes mouv {
+    from {
+        translateY:(50%);
+		opacity: 0;
+		
+    }
+    to {
+        translateY: (0);
+		opacity: 1;
+    }
+}
+@-moz-keyframes mouv { /* sur Firefox */
+    from {
+        translateY:(50%)
+    }
+    to {
+        translateY: (0);
+		opacity: 1;
+    }
+}
+

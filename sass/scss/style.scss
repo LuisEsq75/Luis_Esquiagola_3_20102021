@@ -1,5 +1,369 @@
-@import "variables";
-@import "effets.scss";
+@import "variables.scss";
+@import "effect.scss";
 @import "functions.scss";
 @import "mixins.scss";
-@import "button.scss";
+@import "buttons.scss";
+@import "typographie.scss";
+
+
+header
+{
+    box-shadow: 0px 0.1rem 0.2rem darkgray ;
+    text-align:center;
+    font-family: $logo-font;
+    position: relative;
+    padding: 0.5rem 0;
+    z-index: 1;
+    max-width: 1440px;
+    margin: 0 auto;
+
+        i
+            {
+            position: absolute;
+            top:  25%;
+            left: 20px;
+            font-size: x-large;
+            color: black;
+            }
+}
+
+
+
+
+/* Section 1 */
+.city
+{   display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: $color-bg-city;
+    text-align: center;
+    padding: 0.8rem;
+}
+
+.explorer
+ {
+    text-align: center;
+    padding: 0.25rem 0;
+    background-color: $color-bg-test;
+    h2
+        {
+            margin: 1rem;
+        }
+ }
+
+/* Section 2 */
+
+.fonctionnement
+{
+    width: 90%;
+    max-width: 1440px;
+    margin:0 auto;
+
+    &__step
+    { 
+        display: flex;
+        align-items: center;
+        box-shadow: 0 3px 3px 0 lighten($color-tertiary, 10%);
+        border-radius: 1rem;
+        margin: 1rem 0 1rem .5rem;
+        background-color: $color-bg-test;
+    }
+    &__step div
+     {
+        background-color: $color-primary;
+        padding: .25rem .5rem;
+        border-radius: 50%;
+        margin-left: -.75rem;
+        color: $color-text;
+        font-size: clamp(12px, 5vw, 20px);
+        margin-right: 1.5rem;
+     }
+    &__step i
+    {
+        margin: 1.25rem;
+    }
+
+    &__step p 
+    {
+        font-weight: 600;
+    }
+}
+
+/* Restaurant */
+
+#restaurant
+{
+    background-color:$color-bg-test;
+    padding:.5rem .5rem .5rem .5rem;
+    max-width:1440px;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+
+ 
+    
+}
+.stxt
+    {
+        margin-top: 2rem;
+        margin-left: 0.8rem;
+        max-width: 1440px;
+    }
+
+.restaurant
+{
+    position: relative;
+    &__card
+    {
+        background-color: $color-bg-def;
+        -webkit-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.5);
+        box-shadow: 0 1px 1px 1px rgba(0,0,0,0.5);
+        border-radius: 1rem;
+        margin: 1rem;
+        position: relative;
+
+        &--modif
+        {
+            margin: 0rem;
+            box-shadow: none;
+        }
+    }
+    
+    h3{
+        padding: 0.3rem 0 0.1rem 0.8rem;
+    }
+    p{
+        padding-bottom: 0.75rem;
+        padding-left: 0.8rem;
+    }
+    .photos
+    
+        { 
+            width:100%;
+            max-height:  200px;
+            border-radius:1rem 1rem 0 0;
+            -o-object-fit:cover;
+            object-fit:cover;
+
+            &--modif
+            {
+                border-radius: 0;
+            }
+        }
+    
+
+    .restaurant__card__new
+    {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        font-size: 18px;
+        padding: .5rem .75rem;
+        background-color: $color-tertiary;
+        color: darken($color: $color-tertiary, $amount: 40%);
+        border-radius: 4%;
+        font-weight: 500;
+    }   
+    .restaurant__coeur
+    {
+        
+            position: absolute;
+            right: 2rem;
+            bottom: 1.4rem;
+            font-size: 1.5rem;  
+            cursor:pointer;
+
+            .fas
+        {   position: absolute;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            opacity: 0;
+            transition: all 600ms;
+            transform-origin: bottom;
+            
+            @include gradient;
+
+            &:hover 
+            {
+                opacity: 1;
+                transform: scale(1.05);
+                font-weight: 900;
+              
+            }
+        }
+    }   
+}
+
+/* Footer */
+
+footer{
+    
+    position: relative;
+    background-color: $color-bg-footer;
+    color: $color-text;
+    padding: 1.25rem;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    a
+    { color: $color-text;}
+
+    .fa-utensils{
+    margin-right: 1rem;}
+
+    .fa-hands-helping{
+    margin-right: 0.55rem;}
+    
+    .pied div
+    {margin-top: 0.75rem;}
+    
+    h2
+    {font-family: $title-font;}
+}
+/* autre pages */
+
+.resto
+{
+    position: relative;
+    max-width: 1440px;
+    background-color: $color-bg-test;
+    padding: 1.5rem 0;
+    border-radius: 1.5rem 1.5rem 0 0;
+    margin :-2.5rem auto 0 auto;
+    
+    &__title h2
+    {   font-family: $title-font;
+        margin-left: 1rem;
+        margin-top: -0.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    h3
+        
+        {
+            margin: 1.5rem 1rem;
+            font-weight: 300;
+        }
+}
+
+/* Soulignage titre cat */
+
+
+.menu-items
+{
+    margin : 0.1rem 0.5rem 0.8rem 0.5rem;
+    background-color:$color-bg-def;
+    box-shadow: 0 1px 1px 1px $rgba-def;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: mouv 3s;
+    animation-fill-mode: both;
+    
+    
+
+               
+        @for $i from 2 through 10
+            {
+            &:nth-child(#{$i})
+                {
+                animation-delay: 250ms * $i;
+                }
+            }
+    &__nom
+    {
+        margin-left: 1rem;
+
+        width: 250px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        h4d
+        {
+            padding: 0.5rem;
+        }
+        p
+        {
+            padding: 0.5rem;
+        }
+    }
+
+    &__prix
+    {
+        font-weight: 900;
+        margin-left: auto;
+    }
+    &__ok
+        {
+        margin-left: 3rem;    
+        margin-right: -2rem;
+        }
+            &:hover .menu-items__ok
+            {
+            margin-right: 0rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            background-color: $color-tertiary;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 1rem 1rem 0;
+            }
+        .fas
+        {
+            color: $color-text;
+
+        }
+ }
+
+ .bordure-cat
+ {
+     padding-bottom: 0.2rem;
+     border-bottom: 3.5px solid $color-tertiary;
+ } 
+
+
+ @media screen and (min-width: 600px){
+    
+    .restaurant .photos
+    
+    {max-height: 380px}
+ }
+
+
+ @media screen and (min-width: 1440px){
+     
+    
+    
+    #restaurant
+     {  display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+       
+     }
+     .restaurant .photos
+     {
+       
+            width: 680px;
+            max-height: 380px;
+            
+            &--modif
+            {
+                border-radius: 0;
+                width: 100%;
+                margin: 0 auto;
+            }
+            
+        }
+        .stxt
+    {
+        margin: 0 auto;
+    }
+ }
+ 
