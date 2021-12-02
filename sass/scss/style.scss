@@ -118,6 +118,7 @@ header
 .restaurant
 {
     position: relative;
+
     &__card
     {
         background-color: $color-bg-def;
@@ -134,29 +135,31 @@ header
         }
     }
     
-    h3{
+    h3  
+    {
         padding: 0.3rem 0 0.1rem 0.8rem;
     }
-    p{
+
+    p
+    {
         padding-bottom: 0.75rem;
         padding-left: 0.8rem;
     }
+
     .photos
-    
-        { 
-            width:100%;
-            max-height:  200px;
-            border-radius:1rem 1rem 0 0;
-            -o-object-fit:cover;
-            object-fit:cover;
+    { 
+        width:100%;
+        max-height:  200px;
+        border-radius:1rem 1rem 0 0;
+        -o-object-fit:cover;
+        object-fit:cover;
 
-            &--modif
-            {
-                border-radius: 0;
-            }
+        &--modif
+        {
+        border-radius: 0;
         }
+    }
     
-
     .restaurant__card__new
     {
         position: absolute;
@@ -168,25 +171,26 @@ header
         color: darken($color: $color-tertiary, $amount: 40%);
         border-radius: 4%;
         font-weight: 500;
-    }   
+    } 
+
     .restaurant__coeur
     {
-        
+        position: absolute;
+        right: 2rem;
+        bottom: 1.4rem;
+        font-size: 1.5rem;  
+        cursor:pointer;
+                       
+        .fas
+        {   
             position: absolute;
-            right: 2rem;
-            bottom: 1.4rem;
-            font-size: 1.5rem;  
-            cursor:pointer;
-
-            .fas
-        {   position: absolute;
             color: transparent;
             background-clip: text;
             -webkit-background-clip: text;
             opacity: 0;
             transition: all 600ms;
             transform-origin: bottom;
-            
+                
             @include gradient;
 
             &:hover 
@@ -194,7 +198,7 @@ header
                 opacity: 1;
                 transform: scale(1.05);
                 font-weight: 900;
-              
+                
             }
         }
     }   
@@ -204,7 +208,7 @@ header
 
 footer{
     
-    position: relative;
+    
     background-color: $color-bg-footer;
     color: $color-text;
     padding: 1.25rem;
@@ -237,22 +241,53 @@ footer{
     border-radius: 1.5rem 1.5rem 0 0;
     margin :-2.5rem auto 0 auto;
     
+    
     &__title h2
     {   font-family: $title-font;
         margin-left: 1rem;
         margin-top: -0.5rem;
         margin-bottom: 1rem;
     }
-    
+
+    .restaurant__coeur
+    {
+        position: absolute;
+        right: 2rem;
+        top : 1.4rem;
+        font-size: 1.5rem;  
+        cursor:pointer;
+                       
+        .fas
+        {   
+            position: absolute;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            opacity: 0;
+            transition: all 600ms;
+            transform-origin: bottom;
+                
+            @include gradient;
+
+            &:hover 
+            {
+                opacity: 1;
+                transform: scale(1.05);
+                font-weight: 900;
+                
+            }
+        }
+    }
     h3
         
         {
             margin: 1.5rem 1rem;
             font-weight: 300;
         }
+     
 }
 
-/* Soulignage titre cat */
+
 
 
 .menu-items
@@ -266,11 +301,14 @@ footer{
     align-items: center;
     animation: mouv 3s;
     animation-fill-mode: both;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     
     
 
                
-        @for $i from 2 through 10
+        @for $i from 1 through 10
             {
             &:nth-child(#{$i})
                 {
@@ -279,20 +317,21 @@ footer{
             }
     &__nom
     {
-        margin-left: 1rem;
+        margin-left: 0.5rem;
+        width: 300px;
 
-        width: 250px;
         white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+            overflow: hidden;
+            text-overflow: ellipsis;
 
-        h4d
+        
+        h4,p
         {
-            padding: 0.5rem;
-        }
-        p
-        {
-            padding: 0.5rem;
+            padding: 0.5rem 0.1rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
         }
     }
 
@@ -303,19 +342,24 @@ footer{
     }
     &__ok
         {
-        margin-left: 3rem;    
-        margin-right: -2rem;
+        margin-left: 1rem;    
+        margin-right: -1rem;
         }
             &:hover .menu-items__ok
+            
             {
             margin-right: 0rem;
-            width: 3.5rem;
-            height: 3.5rem;
+            width: 4.5rem;
+            height: 4.5rem;
             background-color: $color-tertiary;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 0 1rem 1rem 0;
+            transition: margin-right 0.5s;
+                i{
+                   animation: animeok 0.5s; 
+                }
             }
         .fas
         {
